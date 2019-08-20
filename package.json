@@ -6,5 +6,12 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "lerna run prebuild && lerna run build",
+    "watch": "lerna run watch",
+    "clean": "lerna clean && lerna run clean",
+    "test": "lerna run test --parallel"
+  }
 }

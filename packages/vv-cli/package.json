@@ -4,21 +4,27 @@
   "description": "> TODO: description",
   "author": "underdolphin <underdolphin@users.noreply.github.com>",
   "homepage": "https://github.com/underdolphin/VirtualViolet#readme",
-  "license": "ISC",
-  "main": "lib/vv-cli.js",
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
   "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+    "dist": "dist"
   },
   "files": [
-    "lib"
+    "dist",
+    "docs",
+    "package.json",
+    "README.md",
+    "LICENSE"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/underdolphin/VirtualViolet.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "build": "tsc -p tsconfig.build.json",
+    "prebuild": "npm run clean",
+    "clean": "rimraf dist/",
+    "test": "jest"
   },
   "bugs": {
     "url": "https://github.com/underdolphin/VirtualViolet/issues"
@@ -30,10 +36,13 @@
     "gulp-cli": "^2.2.0",
     "mocha": "^6.2.0",
     "prettier": "^1.18.2",
-    "shx": "^0.3.2",
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "jest": "^24.9.0",
+    "rimraf": "^3.0.0"
   }
 }
